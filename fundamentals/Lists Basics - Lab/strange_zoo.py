@@ -10,3 +10,10 @@
 # · On the second position is the body;
 #
 # · On the last one is the tail.
+tail = input()
+body = input()
+head = input()
+
+animal = [head, body, tail]
+
+print(animal)
