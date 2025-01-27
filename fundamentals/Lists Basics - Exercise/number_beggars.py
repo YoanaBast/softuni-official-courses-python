@@ -21,6 +21,7 @@ for index in range(len(int_str_list)):
 
 for current_beggar in range(count):
     current_beggar_sum = 0
+
     for current_index in range(start_index, len(int_list_money), count):
         current_beggar_sum += int_list_money[current_index]
 
