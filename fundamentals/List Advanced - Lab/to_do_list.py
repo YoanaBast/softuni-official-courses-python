@@ -3,7 +3,6 @@ command = input()
 while command != 'End':
     to_do_list.append(command)
 
-
     command = input()
 
 sorted_list = sorted(to_do_list)
