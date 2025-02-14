@@ -13,32 +13,27 @@
 # That means after every opening bracket should follow a closing one.
 # Nested parentheses are not valid, and if, for example, two consecutive opening brackets exist, the expression should be marked as unbalanced.
 # You should print "BALANCED" if the parentheses are balanced and "UNBALANCED" otherwise.
-opening = 0
-closing = 0
-order = 0
-first_check = True
-second_check = True
-third_check = True
-command = ''
-last_command = ''
+left = 0
+right = 0
+is_balanced = True
+current = 0
+
 n = int(input())
-for i in range(n):
-    last_command = command
+for times in range(n):
     command = input()
-    order += 1
-    if last_command == command:
-        first_check = False
 
     if command == '(':
-        opening += 1
-
+        if current == 1:
+            is_balanced = False
+        left += 1
+        current = 1
     elif command == ')':
-        closing += 1
+        if current == 2 or current == 0:
+            is_balanced = False
+        right += 1
+        current = 2
 
-if opening != closing:
-    third_check = False
-
-if (first_check == True) and (second_check == True) and (third_check == True):
+if left == right and is_balanced:
     print('BALANCED')
 else:
     print('UNBALANCED')
