@@ -11,7 +11,7 @@ for item in cell_and_water_needed:
     key, value = item.split(" = ")
     value = int(value)
     if key == 'High' and value in range(81, 125 + 1):
-        if water > value:
+        if water >= value:
             water -= value
             cells.append(value)
             effort += 0.25 * value
@@ -19,7 +19,7 @@ for item in cell_and_water_needed:
             continue
 
     elif key == 'Medium' and value in range(51, 80 + 1):
-        if water > value:
+        if water >= value:
             water -= value
             cells.append(value)
             effort += 0.25 * value
@@ -27,7 +27,7 @@ for item in cell_and_water_needed:
             continue
 
     elif key == 'Low' and value in range(1, 50 + 1):
-        if water > value:
+        if water >= value:
             water -= value
             cells.append(value)
             effort += 0.25 * value
