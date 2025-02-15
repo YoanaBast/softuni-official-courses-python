@@ -11,13 +11,17 @@ for part_of_the_day in working_day:
         event, energy_gained = part_of_the_day.split('-')
         energy_gained = int(energy_gained)
 
-        if current_energy + energy_gained <= 100:
+        if current_energy == 100:
+            energy_gained = 0
+        elif  current_energy + energy_gained <= 100:
             current_energy += energy_gained
-            print(f"You gained {energy_gained} energy.")
-            print(f'Current energy: {current_energy}.')
-        else:
-            print(f"You gained 0 energy.")
-            print(f'Current energy: {current_energy}.')
+        else: #cur eng != 100 and cur + gained > 100:
+            energy_gained = 100 - current_energy
+            current_energy = 100
+        print(f"You gained {energy_gained} energy.")
+        print(f'Current energy: {current_energy}.')
+
+
 #ORDER
     elif command == 'order':
         event, coins_gained = part_of_the_day.split('-')
