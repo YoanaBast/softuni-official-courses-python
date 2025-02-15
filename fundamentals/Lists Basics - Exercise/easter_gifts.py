@@ -27,7 +27,6 @@
 # · Print the gifts in the format described above.
 
 gifts_original_list = input().split()
-command = input()
 
 while command != 'No Money':
     temp_list = command.split()
