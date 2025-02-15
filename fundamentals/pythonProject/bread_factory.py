@@ -21,7 +21,6 @@ for part_of_the_day in working_day:
         print(f"You gained {energy_gained} energy.")
         print(f'Current energy: {current_energy}.')
 
-
 #ORDER
     elif command == 'order':
         event, coins_gained = part_of_the_day.split('-')
