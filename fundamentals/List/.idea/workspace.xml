@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb90effe-9929-450b-b534-8748a5dc3751" name="Changes" comment="" />
+    <list default="true" id="eb90effe-9929-450b-b534-8748a5dc3751" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/Lists Basics - Exercise.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/bread_factory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/easter_gifts.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/faro_shuffle.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/football_cards.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/hello_fraance.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/inver_values_better.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/invert_values.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/messaging.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/multiples_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/number_beggars.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/seize_the_fire.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/survival_of_the_biggest.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lists Basics - Exercise/zeros_to_back.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +44,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../List Advanced - Ex" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="easter_gifts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
