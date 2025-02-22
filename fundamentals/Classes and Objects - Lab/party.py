@@ -23,4 +23,4 @@ while True:
 
 info = party.get_party_info()
 print(f'Going:', info['going'])
-print(f'Total', info['total'])
+print(f'Total:', info['total'])
