@@ -1,4 +1,9 @@
-def decimal_to_binary(num: int):
+function DecimalToBinary(num) {
+    while (number > 0) {
+        let
+    }
+
+}
     binary = []
     while True:
         if num == 0:
@@ -14,8 +19,6 @@ def decimal_to_binary(num: int):
     return result
 
 digi = int(input())
-searched = int(input())
-
 binary_num = decimal_to_binary(digi)
 
 zeroes = 0
@@ -25,9 +28,7 @@ for num in binary_num:
         zeroes += 1
     elif num ==1:
         ones += 1
-
-if searched == 0:
+if zeroes > 0:
     print(f'We have {zeroes} zeroes.')
 else:
     print(f'We have {ones} ones.')
-
