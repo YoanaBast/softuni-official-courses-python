@@ -1,0 +1,1 @@
+print('I have setup pycharm and git on ubuntu yay')
