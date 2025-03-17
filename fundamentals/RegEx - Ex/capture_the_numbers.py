@@ -1,9 +1,9 @@
 import re
-match = ''
+
+pattern = r'\d+'
 
 line = input() # initial line
 while line: # will break the loop if line is empty
-    pattern = r'\d+'
     match = re.findall(pattern, line)
 
     if match:
