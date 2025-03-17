@@ -7,15 +7,14 @@ while True:
     if command == 'Purchase':
         break
 
-    matches = re.finditer(regex, command)
-    for match in matches:
-        item = match.group('item')
+    match = re.search(regex, command)
+    if match:
+        item, price, quan = match.groups()
         furniture.append(item)
-        price = match.group('price')
-        quan = match.group('quan')
-        total += float(price) * float(quan)
+        total += float(price) * int(quan)
 
-print(furniture)
-print(total)
 print("Bought furniture:")
-Sofa TV Total money spend: 2436.69
+for furn in furniture:
+    print(furn)
+    #  '\n'.join(furniture) was breaking judge for some reason
+print(f'Total money spend: {total:.2f}')
