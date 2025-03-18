@@ -23,7 +23,7 @@
 #     print(check_ticket(current_ticket))
 # ws = ('@', '#', '$', '^')
 #
-# ticket = '$$$$$$$$$$$$$$$$$$$$'
+# ticket = 'Cas$$$$$$$Ca$$$$$$s$'
 # half1, half2 = ticket[:10], ticket[10:]
 # print(half1, half2)
 #
@@ -38,9 +38,30 @@
 #     if sym * 6 in half1 and sym * 6 in half2:
 #         result = f'ticket "{ticket}" - 6{sym}'
 #         break
-#
-# print(result)
-ticket = "12345678901234567890"
-half1, half2 = ticket[:10], ticket[10:]
-print(half1)
-print(half2)
+half1 = "Cas$$$$$$$"
+half2 = "Ca$$$$$$s$"
+sym = '$'
+
+# max_count_half1 = 0
+# current_count_half1 = 0
+# for char in half1:
+#     if char == sym:
+#         current_count_half1 += 1
+#         max_count_half1 = max(max_count_half1, current_count_half1)
+#     else:
+#         current_count_half1 = 0
+
+half2 = "Ca$$$$$$s$"
+sym = '$'
+
+duplicate = 1
+for index in range(len(half2)-1, 0, -1):
+    if half2[index] == sym:
+        if index > 0:
+            if half2[index] ==  half2[index-1]:
+                duplicate += 1
+
+
+# The max() function returns the item with the highest value
+
+len4e = min(max_count_half1, max_count_half2)
