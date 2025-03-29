@@ -1,7 +1,7 @@
 import re
 string4e = input()
 
-regex_word = r"([:|*]{2})(?P<emoji>[A-Z]{1}[a-z]{2,})(\1)"
+regex_word = r"([:|*]){2}(?P<emoji>[A-Z]{1}[a-z]{2,})(\1){2}"
 regex_int = r"\d"
 
 emoji_dict = {}
@@ -32,4 +32,4 @@ for key in emoji_dict.keys():
         emoji_dict_copy[key] = emoji_dict[key]
 
 for key in emoji_dict_copy.keys():
-    print(f"{emoji_dict[key][0]}{key}{emoji_dict[key][0]}")
+    print(f"{emoji_dict[key][0]*2}{key}{emoji_dict[key][0]*2}")
