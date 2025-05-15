@@ -25,3 +25,7 @@ venv.bak/
 *.iml
 
 # macOS
+.DS_Store
+
+# Windows
+Thumbs
