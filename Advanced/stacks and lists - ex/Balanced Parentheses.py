@@ -18,5 +18,8 @@ for p in par:
             balanced = False
             break
         op_stack.pop()
+else:
+    if op_stack:
+        balanced = False
 
 print('YES') if balanced else print('NO')
