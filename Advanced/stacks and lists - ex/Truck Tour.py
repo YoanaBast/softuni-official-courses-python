@@ -1,19 +1,16 @@
 from collections import deque
 pumps_n = int(input())
-pumps = deque([])
-for pump in range(pumps_n):
-    pumps.append([int(x) for x in input().split()])
-fuel = 0
-popped = {}
-station = -1
-while pumps and len(popped) < pumps_n:
-    station += 1
-    fuel += pumps[0][0]
-    distance = pumps[0][1]
-    pumps.rotate(pumps_n - 1)
-    if fuel >= distance:
-        fuel -= distance
-        popped[station] = pumps.pop()
+pumps = deque()
 
-result = list(popped.keys())[0] #access first key
-print(result)
+for pump in range(pumps_n):
+    fuel, distance = input().split()
+    pumps.append({pump: {"fuel": int(fuel), "distance": int(distance)}})
+
+start = 0
+stops = -1
+
+while stops < pumps_n:
+    fuel = 0
+    for i in range(pumps_n):
+        fuel += pumps[0]['fuel']
+        distance = pumps[0]
