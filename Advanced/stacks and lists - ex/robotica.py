@@ -37,3 +37,4 @@ while items:
         items.rotate(-1)
 
         # 83/100
+        # check https://pastebin.com/pd2guPu0
