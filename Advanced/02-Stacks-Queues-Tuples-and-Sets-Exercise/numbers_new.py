@@ -4,33 +4,24 @@ n = int(input())
 
 for _ in range(n):
     command = input()
+    numbers = [int(x) for x in command.split() if x.isdigit()]
+
     if command.startswith('Add First'):
-        numbers = [int(x) for x in command.split() if x.isdigit()]
-        for digi in numbers:
-                first.add(digi)
+        first.update(numbers)
 
     elif command.startswith('Add Second'):
-        numbers = [int(x) for x in command.split() if x.isdigit()]
-        for digi in numbers:
-                second.add(digi)
+        second.update(numbers)
 
     elif command.startswith('Remove First'):
-        numbers = [int(x) for x in command.split() if x.isdigit()]
-        for digi in numbers:
-            if digi in first:
-                first.remove(digi)
+        first.difference_update(numbers)
 
     elif command.startswith('Remove Second'):
-        numbers = [int(x) for x in command.split() if x.isdigit()]
-        for digi in numbers:
-            if digi in second:
-                second.remove(digi)
+        second.difference_update(numbers)
+        """ Remove all elements of another set from this set. """
 
     elif command == 'Check Subset':
-        if first < second  or first > second:
-            print('True')
-        else:
-            print('False')
+        print(first.issubset(second) or second.issubset(first))
+        """ Report whether another set contains this set. """
 
 first_s = map(str, sorted(first))
 second_s = map(str, sorted(second))
