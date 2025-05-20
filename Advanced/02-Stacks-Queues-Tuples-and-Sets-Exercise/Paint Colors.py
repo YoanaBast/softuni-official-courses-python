@@ -1,96 +1,38 @@
 from collections import deque
-from math import floor
 
-start = deque(input().split())
-colors = {"main": ["red", "yellow", "blue"],
-          "secondary": ["orange", "purple", "green"]}
+color_str = deque(input().split())
+main = ["red", "yellow", "blue"]
+secondary = {
+        "orange": ["red", "yellow"],
+        "purple": ["red", "blue"],
+        "green": ["yellow", "blue"]
+}
 
-keepsake = {}
-color_maybe = {}
-order = 0
+collected = []
 
-while start:
-    if len(start) == 1:
-        test = start[0]
-        if len(test) == 1:
+while color_str:
+    first_str = color_str.popleft()
+    second_str = color_str.pop() if color_str else ''
+
+    for color in (first_str + second_str, second_str + first_str):
+        if color in main or color in secondary:
+            collected.append(color)
             break
-        test_r = 0
     else:
-        test = start[0] + start[-1]
-        test_r = start[-1] + start[0]
+        if len(first_str) > 1:
+            color_str.insert(len(color_str) // 2, first_str[:-1])
+
+            """ D.insert(index, object) - - insert object before index"""
+        if len(second_str) > 1:
+            color_str.insert(len(color_str) // 2, second_str[:-1])
 
 
-    if test in colors["main"]:
-        if test not in keepsake:
-            order += 1
-            keepsake[test] = order
-        if len(start) == 1:
-            start.pop()
-            continue
-        start.pop()
-        start.popleft()
-        continue
+for color in collected:
+    if color in secondary:
+        for el in secondary[color]:
+            if el not in collected:
+                collected.remove(color)
+                break
 
-    elif test in colors["secondary"]:
-        if test not in color_maybe:
-            order += 1
-            color_maybe[test] = order
-        if len(start) == 1:
-            start.pop()
-            continue
-        start.pop()
-        start.popleft()
-        continue
 
-    elif test_r in colors["main"]:
-        if test_r not in keepsake:
-            order += 1
-            keepsake[test_r] = order
-        if len(start) == 1:
-            start.pop()
-            continue
-        start.pop()
-        start.popleft()
-        continue
-
-    elif test_r in colors["secondary"]:
-        if test_r not in color_maybe:
-            order += 1
-            color_maybe[test_r] = order
-            if len(start) == 1:
-                start.pop()
-                continue
-        start.pop()
-        start.popleft()
-        continue
-
-    else:
-        start[0] = start[0][:-1]
-        start[-1] = start[-1][:-1]
-        mid = [start[0], start[-1]]
-
-        start = list(start)
-
-        if len(start) % 2 == 0:
-            middle = len(start) // 2
-        else:
-            middle = floor(len(start) / 2)
-
-        left = start[0:middle]
-        right = start[middle:]
-
-        start = deque(left + mid + right)
-        start.pop()
-        start.popleft()
-
-paints = {"orange": ["red", "yellow"],
-          "purple": ["red", "blue"],
-          "green": ["yellow", "blue"]}
-
-for paint, ordr in color_maybe.items():
-    if all(paint in keepsake for paint in paints[paint]):
-        keepsake[paint] = ordr
-
-sorted_dict = dict(sorted(keepsake.items(), key=lambda item: item[1]))
-
-print(list(sorted_dict))
+print(collected)
