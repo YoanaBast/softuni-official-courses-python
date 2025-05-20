@@ -3,9 +3,9 @@ from collections import deque
 color_str = deque(input().split())
 main = ["red", "yellow", "blue"]
 secondary = {
-        "orange": ["red", "yellow"],
-        "purple": ["red", "blue"],
-        "green": ["yellow", "blue"]
+        "orange": {"red", "yellow"},
+        "purple": {"red", "blue"},
+        "green": {"yellow", "blue"}
 }
 
 collected = []
@@ -21,18 +21,14 @@ while color_str:
     else:
         if len(first_str) > 1:
             color_str.insert(len(color_str) // 2, first_str[:-1])
-
             """ D.insert(index, object) - - insert object before index"""
+
         if len(second_str) > 1:
             color_str.insert(len(color_str) // 2, second_str[:-1])
 
 
 for color in collected:
-    if color in secondary:
-        for el in secondary[color]:
-            if el not in collected:
-                collected.remove(color)
-                break
-
+    if color in secondary and not secondary[color].issubset(collected):
+        collected.remove(color)
 
 print(collected)
