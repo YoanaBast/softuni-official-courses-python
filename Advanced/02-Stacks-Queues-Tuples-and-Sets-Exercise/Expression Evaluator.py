@@ -5,47 +5,19 @@ expr = input().split()
 operators = deque([])
 result_mid = 0
 
+mapper = {'*': lambda a, b: a * b,
+          '/': lambda a, b: a // b,
+          '+': lambda a, b: a + b,
+          '-': lambda a, b: a - b
+          }
+
 for char in expr:
-    if char == '*':
-        result_mid = operators.popleft()
-        for digi in operators:
-            result_mid *= digi
-
-        operators = deque([])
-        operators.append(result_mid)
-        result_mid = 0
-        continue
-
-    elif char == '/':
-        result_mid = operators.popleft()
-        for digi in operators:
-            result_mid = floor(result_mid / digi)
-
-        operators = deque([])
-        operators.append(result_mid)
-        result_mid = 0
-        continue
-
-    elif char == '+':
-        result_mid = operators.popleft()
-        for digi in operators:
-            result_mid += digi
-
-        operators = deque([])
-        operators.append(result_mid)
-        result_mid = 0
-        continue
-
-    elif char == '-':
-        result_mid = operators.popleft()
-        for digi in operators:
-            result_mid -= digi
-
-        operators = deque([])
-        operators.append(result_mid)
-        result_mid = 0
-        continue
-
-    operators.append(int(char))
+    if char not in mapper:
+        operators.append(int(char))
+    else:
+        while len(operators) > 1:
+            first = operators.popleft()
+            second = operators.pop()
+            operators.appendleft(mapper[char](first, second))
 
 print(operators[0])
