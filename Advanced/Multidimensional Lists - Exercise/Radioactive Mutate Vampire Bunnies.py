@@ -27,8 +27,6 @@ def bunnies_exapnd(r, c, dirs):
     else:
         return 0
 
-
-
 matrix = []
 bunnies = deque([])
 s_row, s_col = 0, 0
