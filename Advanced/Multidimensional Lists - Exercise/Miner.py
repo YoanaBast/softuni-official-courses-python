@@ -62,3 +62,60 @@ elif ended:
     print(f"Game over! ({start_row}, {start_col})")
 elif not moves:
     print(f"{unmined_coal} pieces of coal left. ({start_row}, {start_col})")
+
+
+
+"""
+from collections import deque
+
+rows = int(input())
+moves = deque(input().split())
+matrix = []
+unmined_coal = 0
+start_row = start_col = 0
+
+# Read matrix and find starting position and coal count
+for row in range(rows):
+    data = input().split()
+    matrix.append(data)
+    if 's' in data:
+        start_row = row
+        start_col = data.index('s')
+    unmined_coal += data.count('c')
+
+# Directions map
+directions = {
+    'up':    (-1, 0),
+    'down':  (1, 0),
+    'left':  (0, -1),
+    'right': (0, 1)
+}
+
+while moves:
+    move = moves.popleft()
+    dr, dc = directions[move]
+    new_row, new_col = start_row + dr, start_col + dc
+
+    # Check bounds
+    if not (0 <= new_row < rows and 0 <= new_col < len(matrix[0])):
+        continue
+
+    cell = matrix[new_row][new_col]
+
+    if cell == 'e':
+        print(f"Game over! ({new_row}, {new_col})")
+        break
+    elif cell == 'c':
+        unmined_coal -= 1
+        matrix[new_row][new_col] = '*'
+        if unmined_coal == 0:
+            print(f"You collected all coal! ({new_row}, {new_col})")
+            break
+
+    # Move the player
+    matrix[start_row][start_col] = '*'
+    matrix[new_row][new_col] = 's'
+    start_row, start_col = new_row, new_col
+else:
+    print(f"{unmined_coal} pieces of coal left. ({start_row}, {start_col})")
+"""
