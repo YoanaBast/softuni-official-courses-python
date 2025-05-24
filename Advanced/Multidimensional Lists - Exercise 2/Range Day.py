@@ -47,7 +47,8 @@ for _ in range(commands_n):
                     break
             else:
                 break
-
+    if targets_left == 0: #TOVA E EDNOTO
+        break
     elif command[0] == 'move':
         mr, mc = directions[command[1]][0], directions[command[1]][1]
         steps = int(command[2])
