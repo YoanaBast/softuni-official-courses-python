@@ -14,8 +14,6 @@ moves = {
     7: lambda r, c: (r + 2, c - 1),
     8: lambda r, c: (r + 1, c - 2),
 }
-
-
 # for row in range(rows):
 #     data = [x for x in list(input())]
 #     matrix.append(data)
@@ -32,9 +30,7 @@ for row in range(rows):
             knight_key += 1
             knights[chr(knight_key)] = {'r': row, 'c': col, 'k': 0}
 
-
 while knights:
-
     for knight in knights:
         k_row, k_col = knights[knight]['r'], knights[knight]['c']
         for attack in moves:
@@ -46,7 +42,6 @@ while knights:
     # any_k_positive = any(v['k'] > 0 for v in knights.values())
     # if not any_k_positive:
     #     break
-
     max_k = max(d['k'] for d in knights.values())
     if max_k == 0:
         break
