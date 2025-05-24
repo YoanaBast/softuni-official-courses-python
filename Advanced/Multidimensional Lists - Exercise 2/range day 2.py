@@ -8,7 +8,7 @@ directions = {
 SIZE = 5
 range_matrix = []
 my_position = []
-shots = []
+targets_down = []
 targets = 0
 
 for row in range(SIZE):
@@ -19,7 +19,6 @@ for row in range(SIZE):
         elif range_matrix[row][col] == 'x':
             targets += 1
 
-targets_left = targets
 
 for _ in range(int(input())):
     command = input().split()
@@ -31,40 +30,28 @@ for _ in range(int(input())):
         while 0 <= shoot_r < SIZE and 0 <= shoot_c < SIZE:
             if range_matrix[shoot_r][shoot_c] == 'x':
                 range_matrix[shoot_r][shoot_c] = '.'
-                targets_left -= 1
-                shots.append([shoot_r, shoot_c])
+                targets -= 1
+                targets_down.append([shoot_r, shoot_c])
                 break
             shoot_r += directions[command[1]][0]
             shoot_c += directions[command[1]][1]
 
-        if targets_left == 0:
+        if targets == 0:
             print(f"Training completed! All {targets} targets hit.")
             break
 
     elif command[0] == 'move':
-        curr_r= my_position[0] + directions[command[1]][0]
-        curr_c = my_position[1] + directions[command[1]][1]
-        steps = int(command[2])
+        curr_r= my_position[0] + directions[command[1]][0] * int(command[2])
+        curr_c = my_position[1] + directions[command[1]][1] * int(command[2])
+
+        if 0 <= curr_r < SIZE and 0 <= curr_c < SIZE:
+            if range_matrix[curr_r][curr_c] == '.':
+
+                range_matrix[curr_r][curr_c] = 'A'
+                range_matrix[my_position[0]][my_position[1]] = '.'
+                my_position = [curr_r, curr_c]
 
 
-        for _ in range(steps):
-            if 0 <= curr_r < SIZE\
-            and 0 <= curr_c < SIZE:
-                if range_matrix[curr_r][curr_c] == '.':
-
-                    range_matrix[curr_r][curr_c] = '.'
-                    range_matrix[curr_r - directions[command[1]][0]][curr_c - directions[command[1]][1]] = 'A'
-                    my_position = [curr_r, curr_c]
-
-
-                    # print('swap')
-
-
-
-                # print(f'curr r {curr_r}')
-                # print(f'curr c {curr_c}')
-
-
-    print(f"Training completed! All {targets} targets hit.")
-for shot in shots:
-    print(shot)
+if targets > 0:
+    print(f"Training not completed! {targets} left.")
+[print(shot) for shot in targets_down]
