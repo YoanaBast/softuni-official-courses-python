@@ -33,3 +33,12 @@ for direction, move in moves.items():
         curr_egg_mat.append([cur_row, cur_col])
         cur_row += move[0]
         cur_col += move[1]
+
+    if eggs > max_eggs and curr_egg_mat:
+        max_eggs = eggs
+        max_dir = direction
+        max_eggs_matrix = curr_egg_mat
+
+print(max_dir)
+[print(row) for row in max_eggs_matrix]
+print(max_eggs)
