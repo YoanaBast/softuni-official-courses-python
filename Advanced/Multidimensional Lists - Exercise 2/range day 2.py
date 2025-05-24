@@ -37,7 +37,7 @@ for _ in range(int(input())):
             shoot_c += directions[command[1]][1]
 
         if targets == 0:
-            print(f"Training completed! All {targets} targets hit.")
+            print(f"Training completed! All {len(targets_down)} targets hit.")
             break
 
     elif command[0] == 'move':
@@ -53,5 +53,5 @@ for _ in range(int(input())):
 
 
 if targets > 0:
-    print(f"Training not completed! {targets} left.")
+    print(f"Training not completed! {targets} targets left.")
 [print(shot) for shot in targets_down]
