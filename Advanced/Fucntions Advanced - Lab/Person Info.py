@@ -1,9 +1,8 @@
-def get_info(name, age, town):
+def get_info(**kwargs):
+    n, t, a = kwargs['name'],kwargs['town'],kwargs['age'],
 
-    result = f"This is {name} from {town} and he is {age} years old"
-    return result
+    return f"This is {n} from {t} and he is {a} years old"
 
 
-kwargs = {'name': 'Yoana', 'age': 24, 'town': 'Varna'}
 
-print(get_info(**kwargs))
+print(get_info(name='Yoana', age=24, town= 'Varna'))
