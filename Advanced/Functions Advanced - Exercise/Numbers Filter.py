@@ -1,7 +1,5 @@
 def even_odd_filter(**kwargs):
     new_dict = {}
-    odd = []
-    even = []
     for key, lst in kwargs.items():
         if key =='even':
             new_dict[key] = [x for x in lst if x % 2 == 0]
