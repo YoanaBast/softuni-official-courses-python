@@ -1,12 +1,11 @@
 def even_odd_filter(**kwargs):
-    new_dict = {}
     for key, lst in kwargs.items():
         if key =='even':
-            new_dict[key] = [x for x in lst if x % 2 == 0]
+            kwargs[key] = [x for x in lst if x % 2 == 0]
         else:
-            new_dict[key] = [x for x in lst if x % 2 != 0]
+            kwargs[key] = [x for x in lst if x % 2 != 0]
 
-    return dict(sorted(new_dict.items(), key=lambda z: -len(z[1])))
+    return dict(sorted(kwargs.items(), key=lambda z: -len(z[1])))
 
 
 
