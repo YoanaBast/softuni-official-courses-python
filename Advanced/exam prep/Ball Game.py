@@ -1,5 +1,5 @@
 from collections import deque
-total_goals = 0
+goals = 0
 strength = deque([int(x) for x in input().split()])
 accuracy = deque([int(x) for x in input().split()])
 
@@ -8,7 +8,7 @@ while strength and accuracy:
     first_a = accuracy.popleft()
     sumi = last_str + first_a
     if sumi == 100:
-        total_goals += 1
+        goals += 1
 
     elif sumi < 100:
         if last_str < first_a:
@@ -28,38 +28,24 @@ while strength and accuracy:
         accuracy.append(first_a)
 
 
-# if goals == 3:
-#     print("Paul scored a hat-trick!")
-#
-# elif goals == 0:
-#     print("Paul failed to score a single goal.")
-#
-# elif goals > 3:
-#     print("Paul performed remarkably well!")
-#
-# elif 0 <  goals <= 3:
-#     print("Paul failed to make a hat-trick.")
-# if goals > 0:
-#     print(f"Goals scored: {goals}")
-#
-# if strength:
-#     print(f"Strength values left: {', '.join(map(str, strength))}")
-#
-# if accuracy:
-#     print(f"Strength values left: {', '.join(map(str, accuracy))}")
-if total_goals == 3:
+if goals == 3:
     print("Paul scored a hat-trick!")
-elif total_goals > 3:
-    print("Paul performed remarkably well!")
-elif total_goals == 0:
-    print("Paul failed to score a single goal.")
-else:
-    print("Paul failed to make a hat-trick.")
 
-if total_goals > 0:
-    print(f"Goals scored: {total_goals}")
+elif goals == 0:
+    print("Paul failed to score a single goal.")
+
+elif goals > 3:
+    print("Paul performed remarkably well!")
+
+elif 0 <  goals < 3:
+    print("Paul failed to make a hat-trick.")
+if goals > 0:
+    print(f"Goals scored: {goals}")
 
 if strength:
-    print("Strength values left:", ", ".join(map(str, strength)))
+    print(f"Strength values left: {', '.join(map(str, strength))}")
+
 if accuracy:
-    print("Accuracy values left:", ", ".join(map(str, accuracy)))
+    print(f"Accuracy values left: {', '.join(map(str, accuracy))}")
+
+#my logc was all correct, i had a typo in if accuracy: Strength values from copy paste
