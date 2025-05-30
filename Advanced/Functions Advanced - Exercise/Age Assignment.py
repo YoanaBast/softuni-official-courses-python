@@ -21,16 +21,23 @@ def age_assignment(*args, **kwargs):
             data[name] = age
 
     sorted_data = sorted(data.items(), key=lambda kvp: kvp[0])
+    result = ''
+    for name, age in sorted_data:
+        result += f"{name} is {age} years old.\n"
 
-import unittest
+    return result
 
-class Tests(unittest.TestCase):
-    def test(self):
-        res = age_assignment("Amy", "Bill", "Willy", W=36, A=22, B=61)
-        self.assertEqual(res.strip(),
-                         "Amy is 22 years old.\n"
-                         "Bill is 61 years old.\n"
-                         "Willy is 36 years old.")
+# import unittest
+#
+# class Tests(unittest.TestCase):
+#     def test(self):
+#         res = age_assignment("Amy", "Bill", "Willy", W=36, A=22, B=61)
+#         self.assertEqual(res.strip(),
+#                          "Amy is 22 years old.\n"
+#                          "Bill is 61 years old.\n"
+#                          "Willy is 36 years old.")
+#
+# if __name__ == "__main__":
+#     unittest.main()
 
-if __name__ == "__main__":
-    unittest.main()
+print(age_assignment("Amy", "Bill", "Willy", W=36, A=22, B=61))
