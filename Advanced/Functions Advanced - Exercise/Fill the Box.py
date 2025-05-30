@@ -7,7 +7,6 @@ def fill_the_box(h, l, w, *args):
         something = args.popleft()
         if something == 'Finish':
             return f"There is free space in the box. You could put {volume_box} more cubes."
-            break
 
         if isinstance(something, int):
             if volume_box - something <= 0:
@@ -15,7 +14,6 @@ def fill_the_box(h, l, w, *args):
                 args.appendleft(leftover)
                 cubes_left = sum([x for x in args if isinstance(x, int)])
                 return f"No more free space! You have {cubes_left} more cubes."
-                break
 
             volume_box -= something
 
