@@ -23,7 +23,7 @@ while True:
     if len(command) < MIN_PWD_LEN:
         raise PasswordTooShortError("Password must contain at least 8 characters")
 
-    if command.isdigit() or command.isalpha() or re.match(r'^[^a-zA-Z0-9]+$', command):
+    if command.isdigit() or command.isalpha() or re.match(r'^[@*&%]+$', command):
         raise PasswordTooCommonError("Password must be a combination of digits, letters, and special characters")
 
     if re.match(r'^[a-zA-Z0-9]+$', command):
