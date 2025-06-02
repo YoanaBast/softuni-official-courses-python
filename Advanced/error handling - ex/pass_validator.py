@@ -13,13 +13,14 @@ class PasswordNoSpecialCharactersError(Exception):
 class PasswordContainsSpacesError(Exception):
     pass
 
+MIN_PWD_LEN =8
 
 while True:
     command = input()
     if command == 'Done':
         break
 
-    if len(command) < 8:
+    if len(command) < MIN_PWD_LEN:
         raise PasswordTooShortError("Password must contain at least 8 characters")
 
     if command.isdigit() or command.isalpha() or re.match(r'^[^a-zA-Z0-9]+$', command):
