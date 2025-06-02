@@ -28,8 +28,9 @@ while True:
         if age < LEGAL_AGE:
             raise UnderageTransactionError(f"You must be {LEGAL_AGE} years or older to perform online")
 
+        balance -= money
         print(f"Successfully sent {money} money to a friend")
-        print(f"There is {(balance - money):.2f} money left in the bank account")
+        print(f"There is {balance:.2f} money left in the bank account")
 
     elif command[0] == 'Receive Money':
         money = int(command[1])
