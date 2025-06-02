@@ -10,6 +10,9 @@ class PasswordTooCommonError(Exception):
 class PasswordNoSpecialCharactersError(Exception):
     pass
 
+class PasswordContainsSpacesError(Exception):
+    pass
+
 
 while True:
     command = input()
@@ -24,5 +27,8 @@ while True:
 
     if re.match(r'^[a-zA-Z0-9]+$', command):
         raise PasswordNoSpecialCharactersError("Password must contain at least 1 special character")
+
+    if ' ' in command:
+        raise PasswordContainsSpacesError("Password must not contain empty spaces")
 
     print("Password is valid")
