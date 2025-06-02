@@ -13,13 +13,12 @@ stat_pin, balance, age = [int(x) for x in input().split(', ')]
 LEGAL_AGE = 18
 
 while True:
-    command = input().split()
+    command = input().split('#')
     if command[0] == 'End':
         break
 
-    elif command[0] == 'Send':
-        _, money, curr_pin = command[1].split('#')
-        money,curr_pin = int(money), int(curr_pin)
+    elif command[0] == 'Send Money':
+        money,curr_pin = int(command[1]), int(command[2])
         if money > balance:
             raise MoneyNotEnoughError("Insufficient funds for the requested transaction")
 
@@ -32,9 +31,8 @@ while True:
         print(f"Successfully sent {money} money to a friend")
         print(f"There is {(balance - money):.2f} money left in the bank account")
 
-    elif command[0] == 'Receive':
-        _, money = command[1].split('#')
-        money = int(money)
+    elif command[0] == 'Receive Money':
+        money = int(command[1])
         if money < 0:
             raise MoneyIsNegativeError("The amount of money cannot be a negative number")
 
