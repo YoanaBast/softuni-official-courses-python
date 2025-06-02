@@ -37,4 +37,6 @@ while True:
         if money < 0:
             raise MoneyIsNegativeError("The amount of money cannot be a negative number")
 
-        print(f"{(money / 2):.2f} money went straight into the bank account")
+        into_balance = money * 0.5
+        balance += into_balance
+        print(f"{into_balance:.2f} money went straight into the bank account")
