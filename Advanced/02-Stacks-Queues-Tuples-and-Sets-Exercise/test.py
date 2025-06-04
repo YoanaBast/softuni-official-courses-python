@@ -1,9 +1,9 @@
-fruit = ['apple', 'banana']
-# start[0] = start[0][:-1]
-fruit[0] = fruit[0][:-1]
-fruit[-1] = fruit[-1][:-1]
+# fruit = ['apple', 'banana']
+# # start[0] = start[0][:-1]
+# fruit[0] = fruit[0][:-1]
+# fruit[-1] = fruit[-1][:-1]
 
-print(fruit)
+# print(fruit)
 # #['appl', 'banana']
 
 # list = [1, 2, 3]   # ✅ valid, but bad practice — "list" is a built-in type
@@ -18,3 +18,7 @@ print(fruit)
 #
 # print(left)
 # print(right)
+# text = 'banana'
+# print(text[::2])
+x = (input().lower().split(' '))
+print(x)
