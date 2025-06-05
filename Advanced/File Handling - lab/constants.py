@@ -1,0 +1,1 @@
+ABSOLUTE_PROJECT_PATH = 'C:\\Users\\User\Documents\GitHub\softuni-official-courses-python\Advanced'
