@@ -8,3 +8,5 @@ try:
     print('File Found')
 except FileNotFoundError:
     print("File not found")
+
+close(path)
