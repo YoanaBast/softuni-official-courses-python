@@ -20,5 +20,14 @@
 # print(right)
 # text = 'banana'
 # print(text[::2])
-x = (input().lower().split(' '))
-print(x)
+#cutting a string
+
+from collections import deque
+#does not work for deque
+start = deque([10, 20, 30, 40, 50])
+middle = 2
+
+start_list = list(start)
+left = start[0:middle + 1]
+right = start[middle + 1:]
+print(left)
