@@ -20,5 +20,8 @@ for word in word_contents:
 
 data = dict(sorted(data.items(), key=lambda kvp: -kvp[1] ))
 
-for key, value in data.items():
-    print(f"{key} - {value}")
+output_path = os.path.join(ABSOLUTE_PROJECT_PATH, 'file_folder', 'output.txt')
+with open(output_path, 'w') as f3:
+    for key, value in data.items():
+        f3.write(f"{key} - {value}\n")
+
