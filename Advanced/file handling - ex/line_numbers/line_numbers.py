@@ -12,7 +12,7 @@ with open(output, 'a') as o:
             s = 0
             for x in syms:
                 s += line.count(x)
-            o.write(f'Line {i}: {line} ({(len(no_spaces) - s)})({s})\n')
+            o.write(f'Line {i + 1}: {line} ({(len(no_spaces) - s)})({s})\n')
 
 # make sure the output file is empty before running
 
