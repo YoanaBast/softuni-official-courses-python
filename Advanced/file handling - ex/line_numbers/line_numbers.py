@@ -4,8 +4,7 @@ output = 'output.txt'
 syms = {"-", ",", ".", "!", "?", "'"}
 lines = []
 
-with open(output, 'a') as o:
-    with open(text_path) as f:
+with open(output, 'a') as o, open(text_path) as f:
         for i, line in enumerate(f):
             line = line.strip()
             no_spaces = line.replace(" ", "")
