@@ -13,8 +13,9 @@ with open(text_path) as f:
                     if char in syms:
                         word = word.replace(char, '@')
                         line_lst[inx] = word
+            line_lst = list(reversed(line_lst))
+            lines.append(line_lst)
 
-            lines.append(list(reversed(line_lst)))
 
 for item in lines:
     print(' '.join(item))
