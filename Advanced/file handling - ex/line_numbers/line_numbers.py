@@ -13,5 +13,4 @@ with open(output, 'a') as o, open(text_path) as f:
                 s += line.count(x)
             o.write(f'Line {i + 1}: {line} ({(len(no_spaces) - s)})({s})\n')
 
-# make sure the output file is empty before running
 
